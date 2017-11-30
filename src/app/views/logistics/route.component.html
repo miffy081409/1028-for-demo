@@ -1,0 +1,80 @@
+<div class="animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        Routes
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Route #</th>
+                                    <th>Region</th>
+                                    <th>Province</th>
+                                    <th>Area</th>
+                                    <th>Start Point</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background-color: rgba(0, 0, 0, 0.075);">
+                                    <td>
+                                        <input class="form-control" />
+                                    </td>
+                                    <td>
+                                        <input class="form-control" />
+                                    </td>
+                                    <td>
+                                        <input class="form-control" />
+                                    </td>
+                                    <td>
+                                        <input class="form-control" />
+                                    </td>
+                                    <td>
+                                        <select class="form-control">
+                                            <option>Select Start Point</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                </tr>
+                                <tr *ngFor="let order of Orders">
+                                    <td>{{order.ID}}</td>
+                                    <td>{{order.Customer}}</td>
+                                    <td>{{order.SalesMan}}</td>
+                                    <td>{{order.Date | date: 'dd/MM/yyyy'}}</td>
+                                    <td>{{order.Amount}}</td>
+                                    <td>{{order.Status}}</td>
+                                    <td>
+                                            <a href="#">View Map</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#">Prev</a>
+                            </li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">3</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">4</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
