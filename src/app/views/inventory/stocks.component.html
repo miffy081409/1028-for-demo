@@ -11,8 +11,10 @@
               <tr>
                 <th>Item #</th>
                 <th>Name</th>
-                <th>Category</th>
+                <th>Description</th>
                 <th>Unit Price</th>
+                <th>In Stock</th>
+                <th>Available</th>
               </tr>
             </thead>
             <tbody>
@@ -29,55 +31,17 @@
                     <td>
                         <input class="form-control" />
                     </td>
+                    <td></td>
+                    <td></td>
                 </tr>
-              <tr>
-                <td>ITM0001</td>
-                <td>APO Cement</td>
-                <td>Cement</td>
-                <td>
-                  150.00
-                </td>
-              </tr>
-              <tr>
-                  <td>ITM0001</td>
-                  <td>APO Cement</td>
-                  <td>Cement</td>
-                  <td>
-                    150.00
-                  </td>
+                <tr *ngFor="let stock of Stocks">
+                  <td>{{stock.Item.ItemNo}}</td>
+                  <td>{{stock.Item.Name}}</td>
+                  <td>{{stock.Item.Description}}</td>
+                  <td>{{stock.Item.UnitPrice | number:'3.2-5'}}</td>
+                  <td>{{stock.InStock}}</td>
+                  <td>{{stock.Available}}</td>
                 </tr>
-                <tr>
-                    <td>ITM0001</td>
-                    <td>APO Cement</td>
-                    <td>Cement</td>
-                    <td>
-                      150.00
-                    </td>
-                  </tr>
-                  <tr>
-                      <td>ITM0001</td>
-                      <td>APO Cement</td>
-                      <td>Cement</td>
-                      <td>
-                        150.00
-                      </td>
-                    </tr>
-                    <tr>
-                        <td>ITM0001</td>
-                        <td>APO Cement</td>
-                        <td>Cement</td>
-                        <td>
-                          150.00
-                        </td>
-                      </tr>
-                      <tr>
-                          <td>ITM0001</td>
-                          <td>APO Cement</td>
-                          <td>Cement</td>
-                          <td>
-                            150.00
-                          </td>
-                        </tr>
             </tbody>
           </table>
           <ul class="pagination">

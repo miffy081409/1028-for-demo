@@ -39,19 +39,20 @@
                                     <select class="form-control">
                                         <option>Pending</option>
                                         <option>Approved</option>
+                                        <option>Cancelled</option>
                                     </select>
                                 </td>
                                 <td></td>
                             </tr>
                             <tr *ngFor="let order of Orders">
-                                <td>{{order.ID}}</td>
-                                <td>{{order.Customer}}</td>
-                                <td>{{order.SalesMan}}</td>
+                                <td>{{order.SalesOrderNo}}</td>
+                                <td>{{order.Customer.Name}}</td>
+                                <td>{{order.Salesman}}</td>
                                 <td>{{order.Date | date: 'dd/MM/yyyy'}}</td>
-                                <td>{{order.Amount}}</td>
+                                <td>{{order.Total | number:'3.2-5'}}</td>
                                 <td>{{order.Status}}</td>
                                 <td>
-                                    <a href="#">View</a>
+                                    <a routerLink="/sales/order" [queryParams] ="{id: order.ID}">View</a>
                                 </td>
                             </tr>
                         </tbody>

@@ -4,6 +4,8 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
 
+import { TestDataService } from './services/testdata.service';
+
 // Import containers
 import {
   FullLayoutComponent,
@@ -79,7 +81,7 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
     ...APP_COMPONENTS,
     ...APP_DIRECTIVES
   ],
-  providers: [{
+  providers: [TestDataService, {
     provide: LocationStrategy,
     useClass: HashLocationStrategy
   }],

@@ -1,6 +1,6 @@
 <div class="animated fadeIn">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                     <div class="card">
                             <div class="card-header">
                                 Item List
@@ -12,8 +12,8 @@
                                             <th>Item #</th>
                                             <th>Name</th>
                                             <th>Description</th>
+                                            <th>Unit Price</th>
                                             <th>Status</th>
-                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -27,25 +27,22 @@
                                             <td>
                                                 <input class="form-control" />
                                             </td>
-                                            
+                                            <td>
+                                                <input class="form-control" />
+                                            </td>
                                             <td>
                                                 <select class="form-control">
                                                     <option>Active</option>
                                                     <option>Inactive</option>
                                                 </select>
                                             </td>
-                                            <td></td>
                                         </tr>
-                                        <tr *ngFor="let order of Orders">
-                                            <td>{{order.ID}}</td>
-                                            <td>{{order.Customer}}</td>
-                                            <td>{{order.SalesMan}}</td>
-                                            <td>{{order.Date | date: 'dd/MM/yyyy'}}</td>
-                                            <td>{{order.Amount}}</td>
-                                            <td>{{order.Status}}</td>
-                                            <td>
-                                                <a href="#">View</a>
-                                            </td>
+                                        <tr *ngFor="let i of Items">
+                                            <td>{{i.ItemNo}}</td>
+                                            <td>{{i.Name}}</td>
+                                            <td>{{i.Description}}</td>
+                                            <td>{{i.UnitPrice | number:'3.2-5'}}</td>
+                                            <td>{{i.IsActive ? 'Active': 'Inactive'}}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -72,7 +69,7 @@
                             </div>
                         </div>
             </div>
-            <div class="col-md-4">
+            <!-- <div class="col-md-4">
                 <div class="card">
                     <div class="card-header">
                         Item Info
@@ -119,6 +116,6 @@
                         <button type="button" class="btn btn-primary">Save Item</button>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>

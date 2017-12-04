@@ -1,31 +1,16 @@
 import { Component } from '@angular/core';
 
-class ItemModel{
-  ID:string;
-  ItemName:string;
-  Category:string;
-  Description:string;
-  UM:string;
-  HasEnoughQty:boolean;
-}
+import { TestDataService, Stock } from '../../services/testdata.service';
 
 @Component({
   templateUrl: 'stocks.component.html'
 })
 export class StocksComponent {
-  Items: ItemModel[] = new Array<ItemModel>();
-  constructor() { }
+  
+  Stocks: Stock[] = new Array<Stock>();
 
-  generateTestData(){
-    for(let i = 1;i <= 10;i++){
-      this.Items.push(this.createRandomItem(i));
-  }
+  constructor(private service: TestDataService) { 
+    this.Stocks = this.service.getStocks();
   }
 
-  createRandomItem(id:number): ItemModel{
-    let item = new ItemModel();
-    item.ID = "ITM-00000" + id;
-    
-    return item;
-  }
 }
