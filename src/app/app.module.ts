@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 
@@ -73,6 +74,7 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
     AppRoutingModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
+    HttpClientModule,
     ChartsModule
   ],
   declarations: [

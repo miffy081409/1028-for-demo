@@ -9,11 +9,9 @@
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
-                                            <th>Item #</th>
                                             <th>Name</th>
                                             <th>Description</th>
                                             <th>Unit Price</th>
-                                            <th>Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -27,22 +25,11 @@
                                             <td>
                                                 <input class="form-control" />
                                             </td>
-                                            <td>
-                                                <input class="form-control" />
-                                            </td>
-                                            <td>
-                                                <select class="form-control">
-                                                    <option>Active</option>
-                                                    <option>Inactive</option>
-                                                </select>
-                                            </td>
                                         </tr>
                                         <tr *ngFor="let i of Items">
-                                            <td>{{i.ItemNo}}</td>
                                             <td>{{i.Name}}</td>
                                             <td>{{i.Description}}</td>
                                             <td>{{i.UnitPrice | number:'3.2-5'}}</td>
-                                            <td>{{i.IsActive ? 'Active': 'Inactive'}}</td>
                                         </tr>
                                     </tbody>
                                 </table>

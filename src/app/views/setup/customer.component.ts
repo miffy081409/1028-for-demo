@@ -9,7 +9,11 @@ export class CustomerComponent {
   Customers: Customer[] = new Array<Customer>();
 
   constructor(private service: TestDataService) { 
-    this.Customers = this.service.getCustomers();
+    this.loadData();
+  }
+
+  async loadData(){
+    this.Customers = await this.service.getCustomers();
   }
 
 }

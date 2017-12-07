@@ -12,25 +12,25 @@
                                 <label for="exampleInputEmail1">SO #
                                     <small id="emailHelp" class="text-muted">System generated value</small>
                                 </label>
-                                <input type="text" class="form-control" readonly id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <input type="text" [(ngModel)]="Model.TransactionNo" name="TransactionNo" class="form-control" readonly id="exampleInputEmail1" aria-describedby="emailHelp">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail2">Date</label>
-                                <input type="date" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
+                                <input type="date" [(ngModel)]="Model.Date" name="Date" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
                             </div>
                             <div class="form-group">
                                     <label for="exampleInputEmail2">Status</label>
-                                    <select class="form-control">
-                                        <option>Pending</option>
-                                        <option>Approved</option>
-                                        <option>Cancel</option>
+                                    <select class="form-control" [(ngModel)]="Model.Status" name="Status">
+                                        <option value="Pending">Pending</option>
+                                        <option value="Approved">Approved</option>
+                                        <option value="Cancelled">Cancelled</option>
                                     </select>
                                   </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="exampleInputEmail3">Customer</label>
-                                <input type="text" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp">
+                                <input type="text" [(ngModel)]="Model.Customer.Name" name="Customer.Name" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail4">Salesman</label>
@@ -38,7 +38,7 @@
                             </div>
                             <div class="form-group">
                                     <label for="exampleInputEmail4">Total Amount</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail4" aria-describedby="emailHelp">
+                                    <input [(ngModel)]="Model.Total" name="Total" type="text" class="form-control" id="exampleInputEmail4" aria-describedby="emailHelp">
                                 </div>
                         </div>
                     </div>

@@ -10,6 +10,10 @@ export class ItemComponent {
   Items : Item[] = new Array<Item>();
 
   constructor(private service: TestDataService) { 
-    this.Items = this.service.getItems();
+    this.LoadData();
+  }
+
+  async LoadData(){
+    this.Items = await this.service.getItems();
   }
 }

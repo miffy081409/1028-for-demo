@@ -10,7 +10,10 @@ export class StocksComponent {
   Stocks: Stock[] = new Array<Stock>();
 
   constructor(private service: TestDataService) { 
-    this.Stocks = this.service.getStocks();
+    this.LoadData();
   }
 
+  async LoadData(){
+    this.Stocks = await this.service.getStocks();
+  }
 }

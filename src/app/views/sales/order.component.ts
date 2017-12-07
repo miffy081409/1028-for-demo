@@ -10,6 +10,10 @@ export class OrderComponent {
     Orders: SalesOrder[] = new Array<SalesOrder>();
 
     constructor(private service : TestDataService) { 
-        this.Orders = this.service.getSalesOrder();
+        this.LoadData();
+    }
+
+    async LoadData(){
+        this.Orders = await this.service.getSalesOrders();
     }
 }
